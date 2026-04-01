@@ -1,0 +1,629 @@
+/* Global Styles - Clean Vertical Layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+  background: #f0f2f8;
+  min-height: 100vh;
+  color: #1e293b;
+}
+
+/* Import Google Fonts - More Formal Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Merriweather:wght@300;400;700&display=swap');
+
+/* Biodata Container */
+.biodata-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 24px;
+  background: #f0f2f8;
+  min-height: 100vh;
+}
+
+.biodata-card {
+  max-width: 700px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.biodata-header {
+  background: linear-gradient(135deg, #1e2a3a 0%, #15232e 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: 36px 28px;
+}
+
+.biodata-header h1 {
+  font-family: 'Merriweather', 'Inter', serif;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.biodata-header p {
+  font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  font-weight: 400;
+}
+
+/* Content - Vertical Layout */
+.biodata-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}
+
+/* Profile Section */
+.profile-image-container {
+  text-align: center;
+  padding: 32px 28px 24px 28px;
+  background: #ffffff;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.profile-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.profile-overlay {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e2a3a;
+  color: white;
+  padding: 5px 14px;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* Card Styles - All Cards Vertical */
+.personal-info,
+.contact-info,
+.education-info,
+.class-info,
+.student-id-info {
+  background: #ffffff;
+  padding: 0 28px;
+  margin-bottom: 8px;
+}
+
+/* Section Title */
+.section-title {
+  font-family: 'Merriweather', 'Inter', serif;
+  font-size: 1rem;
+  color: #1e2a3a;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  padding: 0 0 8px 0;
+}
+
+.section-title .icon {
+  font-size: 1.1rem;
+}
+
+/* Info Grid */
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: #f8fafd;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.info-item:hover {
+  background: #f1f4f9;
+  transform: translateX(4px);
+}
+
+.info-item label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  color: #64748b;
+  font-size: 0.8rem;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.info-item p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #0f172a;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-align: right;
+}
+
+/* Contact Info - Improved Layout */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: #f8fafd;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.contact-item:hover {
+  background: #f1f4f9;
+  transform: translateX(4px);
+}
+
+.contact-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  min-width: 32px;
+  color: #64748b;
+}
+
+.contact-label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  color: #64748b;
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.contact-value {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #0f172a;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: right;
+  word-break: break-word;
+  max-width: 60%;
+}
+
+/* Alternative: If you prefer keeping the original structure but with right alignment */
+.contact-item-alt {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: #f8fafd;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.contact-item-alt:hover {
+  background: #f1f4f9;
+  transform: translateX(4px);
+}
+
+.contact-item-alt .contact-icon {
+  font-size: 1.2rem;
+  min-width: 32px;
+  color: #64748b;
+}
+
+.contact-item-alt .contact-details {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-item-alt label {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  color: #64748b;
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.contact-item-alt p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #0f172a;
+  margin: 0;
+  font-size: 0.88rem;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Education Info */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.education-item {
+  padding: 14px 18px;
+  background: #f8fafd;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+}
+
+.education-item:hover {
+  background: #f1f4f9;
+  transform: translateX(4px);
+}
+
+.education-year {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  color: #64748b;
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.education-details h3 {
+  font-family: 'Merriweather', 'Inter', serif;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.institution {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #64748b;
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+}
+
+.education-gpa {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #64748b;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Class Info */
+.class-info .info-item,
+.student-id-info .info-item {
+  background: #f8fafd;
+  padding: 16px 18px;
+}
+
+.class-info .info-item p,
+.student-id-info .info-item p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Student ID Info - Last Card */
+.student-id-info {
+  margin-bottom: 32px;
+}
+
+.nim-number {
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #1e2a3a;
+}
+
+/* Last child margin bottom adjustment */
+.student-id-info .info-grid {
+  margin-bottom: 0;
+}
+
+/* Alternative Info Cards Style (if using card style) */
+.info-card {
+  text-align: center;
+  padding: 24px 20px;
+  background: #f8fafd;
+  border-radius: 16px;
+  transition: all 0.25s ease;
+  margin: 0 28px 20px 28px;
+}
+
+.info-card:hover {
+  background: #f1f4f9;
+  transform: translateY(-3px);
+}
+
+.info-card .info-icon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+  color: #64748b;
+}
+
+.info-card .info-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.info-card .info-value {
+  font-family: 'Merriweather', 'Inter', serif;
+  font-size: 0.95rem;
+  color: #0f172a;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Divider - Optional subtle separator */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+  margin: 8px 28px 20px 28px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .biodata-container {
+    padding: 24px 16px;
+  }
+  
+  .biodata-card {
+    max-width: 100%;
+  }
+  
+  .biodata-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .biodata-header {
+    padding: 28px 20px;
+  }
+  
+  .profile-image-container {
+    padding: 24px 20px 20px 20px;
+  }
+  
+  .personal-info,
+  .contact-info,
+  .education-info,
+  .class-info,
+  .student-id-info {
+    padding: 0 20px;
+  }
+  
+  .info-item,
+  .contact-item,
+  .education-item,
+  .contact-item-alt {
+    padding: 12px 14px;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .info-item p {
+    text-align: left;
+    width: 100%;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .contact-left {
+    width: 100%;
+  }
+  
+  .contact-value {
+    max-width: 100%;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .contact-item-alt .contact-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .contact-item-alt p {
+    text-align: left;
+    width: 100%;
+  }
+  
+  .section-title {
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+  }
+  
+  .info-grid,
+  .contact-list,
+  .education-list {
+    margin-bottom: 20px;
+  }
+  
+  .student-id-info {
+    margin-bottom: 24px;
+  }
+  
+  .info-card {
+    margin: 0 20px 16px 20px;
+  }
+  
+  .class-info .info-item p,
+  .student-id-info .info-item p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .biodata-card {
+    border-radius: 20px;
+  }
+  
+  .biodata-header {
+    padding: 24px 16px;
+  }
+  
+  .biodata-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .profile-image-container {
+    padding: 20px 16px 16px 16px;
+  }
+  
+  .profile-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .personal-info,
+  .contact-info,
+  .education-info,
+  .class-info,
+  .student-id-info {
+    padding: 0 16px;
+  }
+  
+  .info-item,
+  .contact-item,
+  .education-item,
+  .contact-item-alt {
+    padding: 10px 12px;
+  }
+  
+  .info-item p,
+  .contact-value,
+  .contact-item-alt p {
+    font-size: 0.85rem;
+  }
+  
+  .section-title {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  
+  .info-grid,
+  .contact-list,
+  .education-list {
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  
+  .student-id-info {
+    margin-bottom: 20px;
+  }
+  
+  .info-card {
+    margin: 0 16px 14px 16px;
+    padding: 18px 16px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+  }
+  
+  .biodata-container {
+    padding: 0;
+  }
+  
+  .biodata-card {
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  .biodata-header {
+    background: #f5f5f5;
+    color: #000;
+    print-color-adjust: exact;
+  }
+  
+  .info-item,
+  .contact-item,
+  .education-item {
+    background: #fafafa;
+    break-inside: avoid;
+  }
+  
+  .info-item:hover,
+  .contact-item:hover,
+  .education-item:hover {
+    transform: none;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
