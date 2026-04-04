@@ -1,27 +1,37 @@
 import React from 'react';
 
-const ContactInfo = ({ userData }) => {
+/**
+ * ContactInfo
+ * Menampilkan kontak dan alamat dalam bentuk chip card.
+ *
+ * Props:
+ *  - userData: { email, address }
+ */
+const ContactInfo = ({ userData = {} }) => {
+  const { email = '-', address = '-' } = userData;
+
+  const items = [
+    { icon: '✉️', label: 'Email', value: email },
+    { icon: '📍', label: 'Alamat', value: address },
+  ];
+
   return (
     <div className="contact-info">
       <h2 className="section-title">
-        <span className="icon">📧</span>
-        Kontak & Alamat
+        <span className="icon-wrap" aria-hidden="true">📡</span>
+        <span className="title-text">Kontak &amp; Alamat</span>
       </h2>
+
       <div className="contact-list">
-        <div className="contact-item">
-          <div className="contact-left">
-            <span className="contact-icon">📧</span>
-            <span className="contact-label">Email</span>
+        {items.map(({ icon, label, value }) => (
+          <div className="contact-item" key={label}>
+            <div className="contact-icon-box" aria-hidden="true">{icon}</div>
+            <div className="contact-text-block">
+              <span className="contact-label">{label}</span>
+              <span className="contact-value">{value}</span>
+            </div>
           </div>
-          <span className="contact-value">{userData.email}</span>
-        </div>
-        <div className="contact-item">
-          <div className="contact-left">
-            <span className="contact-icon">📍</span>
-            <span className="contact-label">Alamat</span>
-          </div>
-          <span className="contact-value">{userData.address}</span>
-        </div>
+        ))}
       </div>
     </div>
   );
